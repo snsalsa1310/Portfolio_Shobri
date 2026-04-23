@@ -995,7 +995,7 @@ const Portfolio = ({ onViewProject }) => {
       {/* Footer */}
       <footer>
         <div className="container">
-          <p>© 2025 {personalInfo.name}.</p>
+          <p>© 2026. {personalInfo.name}.</p>
         </div>
       </footer>
     </div>
