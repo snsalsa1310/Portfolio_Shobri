@@ -993,7 +993,7 @@ const Portfolio = ({ onViewProject }) => {
       {/* Footer */}
       <footer>
         <div className="container">
-          <p>© 2025 {personalInfo.name}. Built with React.</p>
+          <p>© 2025 {personalInfo.name}.</p>
         </div>
       </footer>
     </div>
