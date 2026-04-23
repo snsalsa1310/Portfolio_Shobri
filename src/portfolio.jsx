@@ -14,13 +14,15 @@ const Portfolio = ({ onViewProject }) => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsVisible(prev => ({
-            ...prev,
-            [entry.target.id]: entry.isIntersecting
-          }));
+          if (entry.isIntersecting) {
+            setIsVisible(prev => ({
+              ...prev,
+              [entry.target.id]: true
+            }));
+          }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0, rootMargin: "0px 0px -50px 0px" }
     );
 
     document.querySelectorAll('section[id]').forEach((section) => {
