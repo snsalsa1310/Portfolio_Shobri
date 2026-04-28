@@ -11,10 +11,17 @@ const ProjectDetail = ({ project, onBack }) => {
 
   if (!project) return null;
 
+  // Flatten images for the lightbox so we can navigate seamlessly
+  const flatImages = project.imageCategories
+    ? project.imageCategories.flatMap(category =>
+      category.groups.flatMap(group => group.images)
+    )
+    : (project.images || []);
+
   const openLightbox = (index) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
-  const prevImage = () => setLightboxIndex((prev) => (prev > 0 ? prev - 1 : project.images.length - 1));
-  const nextImage = () => setLightboxIndex((prev) => (prev < project.images.length - 1 ? prev + 1 : 0));
+  const prevImage = () => setLightboxIndex((prev) => (prev > 0 ? prev - 1 : flatImages.length - 1));
+  const nextImage = () => setLightboxIndex((prev) => (prev < flatImages.length - 1 ? prev + 1 : 0));
 
   return (
     <div className="portfolio">
@@ -27,7 +34,7 @@ const ProjectDetail = ({ project, onBack }) => {
 
         .portfolio {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background-color: #0f172a;
+          background-color: #1a1a1a;
           color: #ffffff;
           line-height: 1.6;
         }
@@ -37,10 +44,10 @@ const ProjectDetail = ({ project, onBack }) => {
           position: fixed;
           top: 0;
           width: 100%;
-          background-color: rgba(15, 23, 42, 0.95);
+          background-color: rgba(26, 26, 26, 0.95);
           backdrop-filter: blur(10px);
           z-index: 1000;
-          border-bottom: 1px solid #334155;
+          border-bottom: 1px solid #404040;
           padding: 1rem 0;
         }
 
@@ -56,7 +63,7 @@ const ProjectDetail = ({ project, onBack }) => {
         .pd-logo {
           font-size: 1.5rem;
           font-weight: bold;
-          background: linear-gradient(135deg, #60a5fa, #a855f7);
+          background: linear-gradient(135deg, #1e3a5f, #f97316);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -69,7 +76,7 @@ const ProjectDetail = ({ project, onBack }) => {
           gap: 0.5rem;
           background: none;
           border: none;
-          color: #94a3b8;
+          color: #a0a0a0;
           cursor: pointer;
           font-size: 1rem;
           font-family: inherit;
@@ -78,7 +85,7 @@ const ProjectDetail = ({ project, onBack }) => {
         }
 
         .pd-back-btn:hover {
-          color: #60a5fa;
+          color: #f97316;
         }
 
         /* Hero */
@@ -92,7 +99,7 @@ const ProjectDetail = ({ project, onBack }) => {
         .pd-hero-bg {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+          background: linear-gradient(135deg, rgba(30, 58, 95, 0.1), rgba(249, 115, 22, 0.1));
           z-index: 0;
         }
 
@@ -120,7 +127,7 @@ const ProjectDetail = ({ project, onBack }) => {
           font-size: 3.5rem;
           font-weight: bold;
           margin-bottom: 1rem;
-          background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899);
+          background: linear-gradient(135deg, #1e3a5f, #f97316, #fb923c);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -130,14 +137,14 @@ const ProjectDetail = ({ project, onBack }) => {
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          color: #94a3b8;
+          color: #a0a0a0;
           font-size: 1.1rem;
           margin-bottom: 2rem;
         }
 
         .pd-hero-description {
           font-size: 1.15rem;
-          color: #cbd5e1;
+          color: #d4d4d4;
           line-height: 1.8;
           max-width: 800px;
         }
@@ -148,7 +155,7 @@ const ProjectDetail = ({ project, onBack }) => {
         }
 
         .pd-section-alt {
-          background-color: #1e293b;
+          background-color: #242424;
         }
 
         .pd-container {
@@ -162,7 +169,7 @@ const ProjectDetail = ({ project, onBack }) => {
           font-size: 2rem;
           font-weight: bold;
           margin-bottom: 2rem;
-          background: linear-gradient(135deg, #60a5fa, #a855f7);
+          background: linear-gradient(135deg, #1e3a5f, #f97316);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -172,7 +179,7 @@ const ProjectDetail = ({ project, onBack }) => {
         }
 
         .pd-section-title-icon {
-          color: #60a5fa;
+          color: #f97316;
           flex-shrink: 0;
         }
 
@@ -184,14 +191,14 @@ const ProjectDetail = ({ project, onBack }) => {
         }
 
         .pd-info-card {
-          background-color: #374151;
+          background-color: #2d2d2d;
           border-radius: 0.5rem;
           padding: 1.5rem;
           transition: all 0.3s;
         }
 
         .pd-info-card:hover {
-          background-color: #4b5563;
+          background-color: #383838;
           transform: translateY(-3px);
         }
 
@@ -199,7 +206,7 @@ const ProjectDetail = ({ project, onBack }) => {
           font-size: 1.1rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #60a5fa;
+          color: #f97316;
         }
 
         .pd-tech-list {
@@ -232,7 +239,7 @@ const ProjectDetail = ({ project, onBack }) => {
         .pd-highlight-dot {
           width: 6px;
           height: 6px;
-          background-color: #60a5fa;
+          background-color: #f97316;
           border-radius: 50%;
           margin-right: 0.75rem;
           margin-top: 0.5rem;
@@ -244,6 +251,34 @@ const ProjectDetail = ({ project, onBack }) => {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .pd-category-block {
+          margin-bottom: 4rem;
+        }
+
+        .pd-category-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #ffffff;
+          margin-bottom: 1.5rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px solid #404040;
+        }
+
+        .pd-group-block {
+          margin-bottom: 2rem;
+        }
+
+        .pd-group-title {
+          font-size: 1.25rem;
+          font-weight: 500;
+          color: #a0a0a0;
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
         }
 
         .pd-gallery-item {
@@ -252,12 +287,12 @@ const ProjectDetail = ({ project, onBack }) => {
           overflow: hidden;
           cursor: pointer;
           transition: all 0.3s;
-          background-color: #1e293b;
+          background-color: #242424;
         }
 
         .pd-gallery-item:hover {
           transform: translateY(-5px);
-          box-shadow: 0 10px 40px rgba(96, 165, 250, 0.15);
+          box-shadow: 0 10px 40px rgba(249, 115, 22, 0.15);
         }
 
         .pd-gallery-img {
@@ -358,17 +393,17 @@ const ProjectDetail = ({ project, onBack }) => {
           bottom: 1.5rem;
           left: 50%;
           transform: translateX(-50%);
-          color: #94a3b8;
+          color: #a0a0a0;
           font-size: 0.9rem;
         }
 
         /* Footer */
         .pd-footer {
           padding: 2rem 0;
-          background-color: #0f172a;
-          border-top: 1px solid #334155;
+          background-color: #1a1a1a;
+          border-top: 1px solid #404040;
           text-align: center;
-          color: #94a3b8;
+          color: #a0a0a0;
         }
 
         /* Responsive */
@@ -459,7 +494,13 @@ const ProjectDetail = ({ project, onBack }) => {
                   {project.highlights.map((highlight, i) => (
                     <li key={i} className="pd-highlight-item">
                       <span className="pd-highlight-dot"></span>
-                      {highlight}
+                      {typeof highlight === 'object' && highlight.link ? (
+                        <a href={highlight.link} target="_blank" rel="noopener noreferrer" style={{ color: '#f97316', textDecoration: 'none' }}>
+                          {highlight.text}
+                        </a>
+                      ) : (
+                        typeof highlight === 'object' ? highlight.text : highlight
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -470,33 +511,70 @@ const ProjectDetail = ({ project, onBack }) => {
       </section>
 
       {/* Gallery Section */}
-      {project.images && project.images.length > 0 && (
+      {flatImages.length > 0 && (
         <section className="pd-section">
           <div className="pd-container">
             <h2 className="pd-section-title">
               <Images size={28} className="pd-section-title-icon" />
               Project Gallery
             </h2>
-            <div className="pd-gallery-grid">
-              {project.images.map((imgSrc, i) => (
-                <div key={i} className="pd-gallery-item" onClick={() => openLightbox(i)}>
-                  <img
-                    src={imgSrc}
-                    alt={`${project.title} - Image ${i + 1}`}
-                    className="pd-gallery-img"
-                  />
-                  <div className="pd-gallery-overlay">
-                    <span>Click to enlarge</span>
-                  </div>
+
+            {project.imageCategories ? (
+              // Nested rendering for categorized images
+              project.imageCategories.map((category, cIdx) => (
+                <div key={cIdx} className="pd-category-block">
+                  {category.name && (
+                    <h3 className="pd-category-title">{category.name}</h3>
+                  )}
+                  {category.groups.map((group, gIdx) => (
+                    <div key={gIdx} className="pd-group-block">
+                      <h4 className="pd-group-title">
+                        <span style={{ color: '#f97316' }}>→</span> {group.type}
+                      </h4>
+                      <div className="pd-gallery-grid">
+                        {group.images.map((imgSrc, i) => {
+                          const globalIndex = flatImages.indexOf(imgSrc);
+                          return (
+                            <div key={i} className="pd-gallery-item" onClick={() => openLightbox(globalIndex)}>
+                              <img
+                                src={imgSrc}
+                                alt={`${project.title} - ${group.type} ${i + 1}`}
+                                className="pd-gallery-img"
+                              />
+                              <div className="pd-gallery-overlay">
+                                <span>Click to enlarge</span>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              ))
+            ) : (
+              // Fallback for legacy flat array
+              <div className="pd-gallery-grid">
+                {flatImages.map((imgSrc, i) => (
+                  <div key={i} className="pd-gallery-item" onClick={() => openLightbox(i)}>
+                    <img
+                      src={imgSrc}
+                      alt={`${project.title} - Image ${i + 1}`}
+                      className="pd-gallery-img"
+                    />
+                    <div className="pd-gallery-overlay">
+                      <span>Click to enlarge</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       )}
 
       {/* Lightbox */}
-      {lightboxIndex !== null && project.images && (
+      {lightboxIndex !== null && flatImages.length > 0 && (
         <div className="pd-lightbox" onClick={closeLightbox}>
           <button className="pd-lightbox-btn pd-lightbox-close" onClick={closeLightbox}>
             <X size={24} />
@@ -505,7 +583,7 @@ const ProjectDetail = ({ project, onBack }) => {
             <ChevronLeft size={28} />
           </button>
           <img
-            src={project.images[lightboxIndex]}
+            src={flatImages[lightboxIndex]}
             alt={`${project.title} - Image ${lightboxIndex + 1}`}
             className="pd-lightbox-img"
             onClick={(e) => e.stopPropagation()}
@@ -514,7 +592,7 @@ const ProjectDetail = ({ project, onBack }) => {
             <ChevronRight size={28} />
           </button>
           <div className="pd-lightbox-counter">
-            {lightboxIndex + 1} / {project.images.length}
+            {lightboxIndex + 1} / {flatImages.length}
           </div>
         </div>
       )}

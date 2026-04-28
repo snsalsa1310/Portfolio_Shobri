@@ -62,7 +62,7 @@ const Portfolio = ({ onViewProject }) => {
 
         .portfolio {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background-color: #0f172a;
+          background-color: #1a1a1a;
           color: #ffffff;
           line-height: 1.6;
         }
@@ -72,10 +72,10 @@ const Portfolio = ({ onViewProject }) => {
           position: fixed;
           top: 0;
           width: 100%;
-          background-color: rgba(15, 23, 42, 0.95);
+          background-color: rgba(26, 26, 26, 0.95);
           backdrop-filter: blur(10px);
           z-index: 1000;
-          border-bottom: 1px solid #334155;
+          border-bottom: 1px solid #404040;
           padding: 1rem 0;
         }
 
@@ -91,7 +91,7 @@ const Portfolio = ({ onViewProject }) => {
         .logo {
           font-size: 1.5rem;
           font-weight: bold;
-          background: linear-gradient(135deg, #60a5fa, #a855f7);
+          background: linear-gradient(135deg, #1e3a5f, #f97316);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -105,7 +105,7 @@ const Portfolio = ({ onViewProject }) => {
         .nav-button {
           background: none;
           border: none;
-          color: #94a3b8;
+          color: #a0a0a0;
           cursor: pointer;
           font-size: 1rem;
           transition: color 0.2s;
@@ -113,11 +113,11 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .nav-button:hover {
-          color: #60a5fa;
+          color: #f97316;
         }
 
         .nav-button.active {
-          color: #60a5fa;
+          color: #f97316;
         }
 
         .mobile-menu-toggle {
@@ -145,14 +145,14 @@ const Portfolio = ({ onViewProject }) => {
           padding: 0.75rem 0;
           background: none;
           border: none;
-          color: #94a3b8;
+          color: #a0a0a0;
           cursor: pointer;
           font-size: 1rem;
           transition: color 0.2s;
         }
 
         .mobile-menu-button:hover {
-          color: #60a5fa;
+          color: #f97316;
         }
 
         /* Sections */
@@ -164,7 +164,7 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .section-alt {
-          background-color: #1e293b;
+          background-color: #242424;
         }
 
         .container {
@@ -184,7 +184,7 @@ const Portfolio = ({ onViewProject }) => {
         .hero-background {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+          background: linear-gradient(135deg, rgba(30, 58, 95, 0.15), rgba(249, 115, 22, 0.08));
           z-index: 0;
         }
 
@@ -201,11 +201,30 @@ const Portfolio = ({ onViewProject }) => {
           opacity: 1;
         }
 
+        .hero-photo-wrapper {
+          width: 160px;
+          height: 160px;
+          margin: 0 auto 2rem;
+          border-radius: 50%;
+          padding: 4px;
+          background: linear-gradient(135deg, #1e3a5f, #f97316, #fb923c);
+          box-shadow: 0 0 40px rgba(249, 115, 22, 0.25), 0 0 80px rgba(249, 115, 22, 0.15);
+        }
+
+        .hero-photo {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          display: block;
+          border: 3px solid #1a1a1a;
+        }
+
         .hero-title {
           font-size: 4rem;
           font-weight: bold;
           margin-bottom: 1.5rem;
-          background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899);
+          background: linear-gradient(135deg, #1e3a5f, #f97316, #fb923c);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -214,13 +233,13 @@ const Portfolio = ({ onViewProject }) => {
         .hero-subtitle {
           font-size: 1.5rem;
           margin-bottom: 2rem;
-          color: #cbd5e1;
+          color: #d4d4d4;
         }
 
         .hero-description {
           font-size: 1.1rem;
           margin-bottom: 3rem;
-          color: #94a3b8;
+          color: #a0a0a0;
           max-width: 600px;
           margin-left: auto;
           margin-right: auto;
@@ -247,12 +266,12 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .button-primary {
-          background-color: #2563eb;
+          background-color: #f97316;
           color: white;
         }
 
         .button-primary:hover {
-          background-color: #1d4ed8;
+          background-color: #ea580c;
           transform: translateY(-2px);
         }
 
@@ -263,7 +282,7 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .button-secondary:hover {
-          border-color: #60a5fa;
+          border-color: #f97316;
           transform: translateY(-2px);
         }
 
@@ -273,7 +292,7 @@ const Portfolio = ({ onViewProject }) => {
           font-weight: bold;
           text-align: center;
           margin-bottom: 3rem;
-          background: linear-gradient(135deg, #60a5fa, #a855f7);
+          background: linear-gradient(135deg, #1e3a5f, #f97316);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -297,12 +316,12 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .about-text {
-          background-color: #374151;
+          background-color: #2d2d2d;
           border-radius: 0.5rem;
           padding: 2rem;
           margin-bottom: 2rem;
           font-size: 1.1rem;
-          color: #d1d5db;
+          color: #d4d4d4;
           line-height: 1.7;
         }
 
@@ -322,7 +341,7 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .about-card {
-          background-color: #374151;
+          background-color: #2d2d2d;
           border-radius: 0.5rem;
           padding: 1.5rem;
         }
@@ -331,11 +350,11 @@ const Portfolio = ({ onViewProject }) => {
           font-size: 1.25rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #60a5fa;
+          color: #f97316;
         }
 
         .about-card p {
-          color: #d1d5db;
+          color: #d4d4d4;
           margin: 0;
         }
 
@@ -347,14 +366,14 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .project-card {
-          background-color: #1e293b;
+          background-color: #242424;
           border-radius: 0.5rem;
           padding: 1.5rem;
           transition: all 0.3s;
         }
 
         .project-card:hover {
-          background-color: #334155;
+          background-color: #404040;
           transform: translateY(-5px);
         }
 
@@ -362,11 +381,11 @@ const Portfolio = ({ onViewProject }) => {
           font-size: 1.25rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #60a5fa;
+          color: #f97316;
         }
 
         .project-description {
-          color: #d1d5db;
+          color: #d4d4d4;
           margin-bottom: 1rem;
           line-height: 1.6;
         }
@@ -392,13 +411,13 @@ const Portfolio = ({ onViewProject }) => {
           align-items: flex-start;
           margin-bottom: 0.5rem;
           font-size: 0.9rem;
-          color: #94a3b8;
+          color: #a0a0a0;
         }
 
         .project-highlight-dot {
           width: 6px;
           height: 6px;
-          background-color: #60a5fa;
+          background-color: #f97316;
           border-radius: 50%;
           margin-right: 0.5rem;
           margin-top: 0.5rem;
@@ -423,7 +442,7 @@ const Portfolio = ({ onViewProject }) => {
 
         .project-tech-tag {
           padding: 0.25rem 0.75rem;
-          background-color: #2563eb;
+          background-color: #f97316;
           color: white;
           font-size: 0.875rem;
           border-radius: 9999px;
@@ -433,7 +452,7 @@ const Portfolio = ({ onViewProject }) => {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: #60a5fa;
+          color: #f97316;
           text-decoration: none;
           transition: color 0.2s;
         }
@@ -450,7 +469,7 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .skill-card {
-          background-color: #374151;
+          background-color: #2d2d2d;
           border-radius: 0.5rem;
           padding: 1.5rem;
           text-align: center;
@@ -458,12 +477,12 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .skill-card:hover {
-          background-color: #4b5563;
+          background-color: #383838;
           transform: translateY(-5px);
         }
 
         .skill-icon {
-          color: #60a5fa;
+          color: #f97316;
           margin-bottom: 1rem;
           display: flex;
           justify-content: center;
@@ -473,7 +492,7 @@ const Portfolio = ({ onViewProject }) => {
           font-size: 1.1rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #60a5fa;
+          color: #f97316;
         }
 
         .skill-list {
@@ -483,7 +502,7 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .skill-item {
-          color: #d1d5db;
+          color: #d4d4d4;
           margin-bottom: 0.5rem;
         }
 
@@ -495,14 +514,14 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .cert-card {
-          background-color: #1e293b;
+          background-color: #242424;
           border-radius: 0.5rem;
           padding: 1.5rem;
           transition: all 0.3s;
         }
 
         .cert-card:hover {
-          background-color: #334155;
+          background-color: #404040;
           transform: translateY(-5px);
         }
 
@@ -520,17 +539,17 @@ const Portfolio = ({ onViewProject }) => {
         .cert-title {
           font-size: 1.1rem;
           font-weight: 600;
-          color: #60a5fa;
+          color: #f97316;
         }
 
         .cert-detail {
-          color: #d1d5db;
+          color: #d4d4d4;
           margin-bottom: 0.5rem;
         }
 
         .cert-achievement {
           font-size: 0.9rem;
-          color: #94a3b8;
+          color: #a0a0a0;
         }
 
         /* Contact section */
@@ -540,14 +559,14 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .contact-card {
-          background-color: #374151;
+          background-color: #2d2d2d;
           border-radius: 0.5rem;
           padding: 2rem;
         }
 
         .contact-description {
           font-size: 1.1rem;
-          color: #d1d5db;
+          color: #d4d4d4;
           margin-bottom: 2rem;
           text-align: center;
         }
@@ -576,11 +595,11 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .contact-email {
-          background-color: #2563eb;
+          background-color: #f97316;
         }
 
         .contact-email:hover {
-          background-color: #1d4ed8;
+          background-color: #ea580c;
         }
 
         .contact-phone {
@@ -592,11 +611,11 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .contact-github {
-          background-color: #4b5563;
+          background-color: #383838;
         }
 
         .contact-github:hover {
-          background-color: #374151;
+          background-color: #2d2d2d;
         }
 
         /* CV Section */
@@ -604,10 +623,10 @@ const Portfolio = ({ onViewProject }) => {
           position: relative;
           max-width: 900px;
           margin: 0 auto;
-          background-color: #1e293b;
+          background-color: #242424;
           border-radius: 0.75rem;
           overflow: hidden;
-          border: 1px solid #334155;
+          border: 1px solid #404040;
         }
 
         .cv-viewer-header {
@@ -615,15 +634,15 @@ const Portfolio = ({ onViewProject }) => {
           align-items: center;
           justify-content: space-between;
           padding: 1rem 1.5rem;
-          background-color: #374151;
-          border-bottom: 1px solid #334155;
+          background-color: #2d2d2d;
+          border-bottom: 1px solid #404040;
         }
 
         .cv-viewer-title {
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          color: #60a5fa;
+          color: #f97316;
           font-weight: 600;
           font-size: 1.1rem;
         }
@@ -682,10 +701,10 @@ const Portfolio = ({ onViewProject }) => {
         /* Footer */
         footer {
           padding: 2rem 0;
-          background-color: #0f172a;
-          border-top: 1px solid #334155;
+          background-color: #1a1a1a;
+          border-top: 1px solid #404040;
           text-align: center;
-          color: #94a3b8;
+          color: #a0a0a0;
         }
 
         /* Responsive Design */
@@ -798,6 +817,9 @@ const Portfolio = ({ onViewProject }) => {
         <div className="container">
           <div className="hero">
             <div className={`hero-content ${isVisible.home ? 'fade-in' : ''}`}>
+              <div className="hero-photo-wrapper">
+                <img src="/assets/photo.jpg" alt={personalInfo.name} className="hero-photo" />
+              </div>
               <h1 className="hero-title">
                 {personalInfo.name}
               </h1>
@@ -875,7 +897,13 @@ const Portfolio = ({ onViewProject }) => {
                     {project.highlights.map((highlight, i) => (
                       <li key={i} className="project-highlight-item">
                         <span className="project-highlight-dot"></span>
-                        {highlight}
+                        {typeof highlight === 'object' && highlight.link ? (
+                          <a href={highlight.link} target="_blank" rel="noopener noreferrer" style={{ color: '#f97316', textDecoration: 'none' }}>
+                            {highlight.text}
+                          </a>
+                        ) : (
+                          typeof highlight === 'object' ? highlight.text : highlight
+                        )}
                       </li>
                     ))}
                   </ul>
