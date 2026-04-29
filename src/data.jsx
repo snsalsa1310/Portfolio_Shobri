@@ -19,7 +19,7 @@ export const aboutMe = {
   careerGoals: {
     title: "Advanced Manufacturing Engineer",
     certification: "Targeting further CAD/CAM professional certifications.",
-    vision: "To grow as a technology professional within the manufacturing industry, creating impactful digital solutions that bridge software innovation with industrial efficiency."
+    vision: "To become a skilled engineer in manufacturing, specializing in drafting, while continuously learning and growing into higher-impact roles."
   }
 };
 

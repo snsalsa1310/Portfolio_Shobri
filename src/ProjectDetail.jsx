@@ -330,36 +330,25 @@ const ProjectDetail = ({ project, onBack }) => {
         }
 
         .pd-gallery-item::before {
-          content: 'Muhammad Shobri';
+          content: '';
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) rotate(-30deg);
-          font-size: 1.1rem;
-          font-weight: 700;
-          color: rgba(255, 255, 255, 0.12);
-          white-space: nowrap;
-          pointer-events: none;
+          inset: 0;
           z-index: 5;
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          user-select: none;
+          pointer-events: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='80'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' transform='rotate(-30, 75, 40)' font-family='Segoe UI, sans-serif' font-size='12' font-weight='700' fill='rgba(0,0,0,0.15)' letter-spacing='2'%3EMUHAMMAD SHOBRI%3C/text%3E%3C/svg%3E");
+          background-repeat: repeat;
+          background-size: 150px 80px;
         }
 
         .pd-lightbox-watermark {
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) rotate(-30deg);
-          font-size: 3rem;
-          font-weight: 700;
-          color: rgba(255, 255, 255, 0.08);
-          white-space: nowrap;
-          pointer-events: none;
+          inset: 0;
           z-index: 2001;
-          letter-spacing: 8px;
-          text-transform: uppercase;
+          pointer-events: none;
           user-select: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='130'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' transform='rotate(-30, 125, 65)' font-family='Segoe UI, sans-serif' font-size='18' font-weight='700' fill='rgba(0,0,0,0.12)' letter-spacing='3'%3EMUHAMMAD SHOBRI%3C/text%3E%3C/svg%3E");
+          background-repeat: repeat;
+          background-size: 250px 130px;
         }
 
         /* Lightbox */
@@ -621,7 +610,7 @@ const ProjectDetail = ({ project, onBack }) => {
             className="pd-lightbox-img"
             onClick={(e) => e.stopPropagation()}
           />
-          <div className="pd-lightbox-watermark">Muhammad Shobri</div>
+          <div className="pd-lightbox-watermark" />
           <button className="pd-lightbox-btn pd-lightbox-next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>
             <ChevronRight size={28} />
           </button>
