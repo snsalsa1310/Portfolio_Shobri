@@ -329,6 +329,39 @@ const ProjectDetail = ({ project, onBack }) => {
           font-weight: 600;
         }
 
+        .pd-gallery-item::before {
+          content: 'Muhammad Shobri';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-30deg);
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: rgba(255, 255, 255, 0.12);
+          white-space: nowrap;
+          pointer-events: none;
+          z-index: 5;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          user-select: none;
+        }
+
+        .pd-lightbox-watermark {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-30deg);
+          font-size: 3rem;
+          font-weight: 700;
+          color: rgba(255, 255, 255, 0.08);
+          white-space: nowrap;
+          pointer-events: none;
+          z-index: 2001;
+          letter-spacing: 8px;
+          text-transform: uppercase;
+          user-select: none;
+        }
+
         /* Lightbox */
         .pd-lightbox {
           position: fixed;
@@ -588,6 +621,7 @@ const ProjectDetail = ({ project, onBack }) => {
             className="pd-lightbox-img"
             onClick={(e) => e.stopPropagation()}
           />
+          <div className="pd-lightbox-watermark">Muhammad Shobri</div>
           <button className="pd-lightbox-btn pd-lightbox-next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>
             <ChevronRight size={28} />
           </button>

@@ -91,7 +91,7 @@ const Portfolio = ({ onViewProject }) => {
         .logo {
           font-size: 1.5rem;
           font-weight: bold;
-          background: linear-gradient(135deg, #1e3a5f, #f97316);
+          background: #f97316;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -537,7 +537,7 @@ const Portfolio = ({ onViewProject }) => {
         }
 
         .cert-title {
-          font-size: 1.1rem;
+          font-size: 1.3rem;
           font-weight: 600;
           color: #f97316;
         }
@@ -871,9 +871,9 @@ const Portfolio = ({ onViewProject }) => {
               <div className="about-card">
                 <h3 className="about-card-title">Career Goals</h3>
                 <p>
-                  {aboutMe.careerGoals.title}<br />
-                  Target: {aboutMe.careerGoals.certification}<br />
-                  Vision: {aboutMe.careerGoals.vision}
+                  <strong>{aboutMe.careerGoals.title}</strong><br />
+                  <strong>Target:</strong> {aboutMe.careerGoals.certification}<br />
+                  <strong>Vision:</strong> {aboutMe.careerGoals.vision}
                 </p>
               </div>
             </div>
@@ -964,16 +964,16 @@ const Portfolio = ({ onViewProject }) => {
       {/* Experience Section */}
       <section id="experience">
         <div className="container">
-          <h2 className="section-title">Work Experience & Leadership</h2>
+          <h2 className="section-title">Work Experience</h2>
           <div className={`certifications-grid fade-in-section ${isVisible.experience ? 'visible' : ''}`}>
             {experience.map((exp, index) => (
               <div key={index} className="cert-card">
                 <div className="cert-header">
-                  <Award size={24} className="cert-icon" />
+                  <Award size={30} className="cert-icon" />
                   <h3 className="cert-title">{exp.title}</h3>
                 </div>
-                <p className="cert-detail"><strong>Institution:</strong> {exp.institution}</p>
-                <p className="cert-detail"><strong>Date:</strong> {exp.date}</p>
+                <p className="cert-detail" style={{ fontSize: '18px' }}><strong>{exp.institution}</strong></p>
+                <p className="cert-detail">{exp.date}</p>
                 <p className="cert-achievement">{exp.achievement}</p>
               </div>
             ))}

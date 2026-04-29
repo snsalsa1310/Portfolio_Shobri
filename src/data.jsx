@@ -13,13 +13,13 @@ export const aboutMe = {
   goals: "Aiming to build a career in advanced manufacturing, industrial design, and robotic automation where I can apply my expertise in mechanical design, FEA, CAD/CAM, and hardware engineering.",
   education: {
     institution: "Sampoerna University | University of Arizona",
-    program: "Bachelor of Engineering | Bachelor of Science",
+    program: "Bachelor of Engineering | Bachelor of Science in Mechanical Engineering",
     focus: "Mechanical Design, Manufacturing, and Automation"
   },
   careerGoals: {
     title: "Advanced Manufacturing Engineer",
-    certification: "Targeting further CAD/CAM professional certifications",
-    vision: "To lead innovative automation engineering projects."
+    certification: "Targeting further CAD/CAM professional certifications.",
+    vision: "To grow as a technology professional within the manufacturing industry, creating impactful digital solutions that bridge software innovation with industrial efficiency."
   }
 };
 
@@ -244,7 +244,6 @@ export const projects = [
           {
             type: "Assembly",
             images: [
-              "/assets/crane_claw/Project 1_[Photo Name].png",
               "/assets/crane_claw/WhatsApp Image 2025-08-10 at 22.46.50.jpeg"
             ]
           },
