@@ -63,7 +63,7 @@ const ProjectDetail = ({ project, onBack }) => {
         .pd-logo {
           font-size: 1.5rem;
           font-weight: bold;
-          background: linear-gradient(135deg, #1e3a5f, #f97316);
+          background: #f97316;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -127,7 +127,7 @@ const ProjectDetail = ({ project, onBack }) => {
           font-size: 3.5rem;
           font-weight: bold;
           margin-bottom: 1rem;
-          background: linear-gradient(135deg, #1e3a5f, #f97316, #fb923c);
+          background: #f97316;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -169,7 +169,7 @@ const ProjectDetail = ({ project, onBack }) => {
           font-size: 2rem;
           font-weight: bold;
           margin-bottom: 2rem;
-          background: linear-gradient(135deg, #1e3a5f, #f97316);
+          background: #f97316;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;

@@ -224,7 +224,7 @@ const Portfolio = ({ onViewProject }) => {
           font-size: 4rem;
           font-weight: bold;
           margin-bottom: 1.5rem;
-          background: linear-gradient(135deg, #1e3a5f, #f97316, #fb923c);
+          background: #f97316;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -292,7 +292,7 @@ const Portfolio = ({ onViewProject }) => {
           font-weight: bold;
           text-align: center;
           margin-bottom: 3rem;
-          background: linear-gradient(135deg, #1e3a5f, #f97316);
+          background: #f97316;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
