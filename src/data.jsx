@@ -26,7 +26,7 @@ export const aboutMe = {
 export const skills = [
   {
     category: 'Engineering Design',
-    items: ['3D Modeling', 'SolidWorks', 'SketchUp', 'Finite Element Analysis (FEA)', 'On Shape'],
+    items: ['3D Modeling', 'SolidWorks', 'SketchUp', 'Finite Element Analysis (FEA)', 'Onshape'],
     icon: 'Code'
   },
   {
