@@ -31,6 +31,18 @@ body {
   min-height: 100vh;
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

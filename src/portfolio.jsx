@@ -1,14 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, ExternalLink, Award, Code, Shield, Database, User, Menu, X, ChevronRight, Linkedin, FileText, ShieldAlert } from 'lucide-react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { Mail, Phone, MessageCircle, ExternalLink, Award, Code, Shield, Database, User, Menu, X, ChevronLeft, ChevronRight, Linkedin, FileText, ShieldAlert } from 'lucide-react';
 import { personalInfo, aboutMe, projects, skills as rawSkills, experience } from './data';
 
-const Portfolio = ({ onViewProject }) => {
+const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState({});
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const ITEMS_PER_PAGE = 6;
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+  const pageParam = parseInt(searchParams.get('page'), 10);
+  const currentPage = isNaN(pageParam) || pageParam < 1 || pageParam > totalPages ? 1 : pageParam;
+
+  const paginatedProjects = projects.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setSearchParams({ page: newPage.toString() });
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   const iconsMap = { Code, Shield, Database, User };
   const skills = rawSkills.map(s => ({ ...s, icon: iconsMap[s.icon] || Code }));
+
+  useEffect(() => {
+    document.title = `${personalInfo.name} | ${personalInfo.title}`;
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -461,6 +487,83 @@ const Portfolio = ({ onViewProject }) => {
           color: #93c5fd;
         }
 
+        /* Pagination */
+        .pagination-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          margin-top: 3rem;
+          flex-wrap: wrap;
+        }
+
+        .pagination-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          background-color: #242424;
+          color: #d4d4d4;
+          border: 1px solid #404040;
+          cursor: pointer;
+          font-weight: 500;
+          transition: all 0.2s;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+          background-color: #383838;
+          color: #f97316;
+          border-color: #f97316;
+        }
+
+        .pagination-btn:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+
+        .pagination-number {
+          min-width: 2.5rem;
+          height: 2.5rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.5rem;
+          background-color: #242424;
+          color: #d4d4d4;
+          border: 1px solid #404040;
+          cursor: pointer;
+          font-weight: 600;
+          transition: all 0.2s;
+        }
+
+        .pagination-number:hover:not(.active) {
+          border-color: #f97316;
+          color: #f97316;
+        }
+
+        .pagination-number.active {
+          background-color: #f97316;
+          color: #ffffff;
+          border-color: #f97316;
+        }
+
+        .pagination-mobile-info {
+          display: none;
+          color: #a0a0a0;
+          font-weight: 500;
+        }
+
+        @media (max-width: 640px) {
+          .pagination-number-list {
+            display: none !important;
+          }
+
+          .pagination-mobile-info {
+            display: inline-block;
+          }
+        }
+
         /* Skills section */
         .skills-grid {
           display: grid;
@@ -690,7 +793,7 @@ const Portfolio = ({ onViewProject }) => {
           }
 
           body::after {
-            content: 'Printing is disabled for this document.';
+            content: 'Printing disabled.';
             display: block;
             text-align: center;
             font-size: 2rem;
@@ -698,7 +801,6 @@ const Portfolio = ({ onViewProject }) => {
           }
         }
 
-        /* Footer */
         footer {
           padding: 2rem 0;
           background-color: #1a1a1a;
@@ -707,7 +809,6 @@ const Portfolio = ({ onViewProject }) => {
           color: #a0a0a0;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
           .nav-desktop {
             display: none;
@@ -768,14 +869,12 @@ const Portfolio = ({ onViewProject }) => {
         }
       `}</style>
 
-      {/* Navigation */}
       <nav>
         <div className="nav-container">
           <div className="logo">
             {personalInfo.name}
           </div>
 
-          {/* Desktop Navigation */}
           <div className="nav-desktop">
             {navItems.map((item) => (
               <button
@@ -788,7 +887,6 @@ const Portfolio = ({ onViewProject }) => {
             ))}
           </div>
 
-          {/* Mobile Navigation Toggle */}
           <button
             className="mobile-menu-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -797,7 +895,6 @@ const Portfolio = ({ onViewProject }) => {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
           {navItems.map((item) => (
             <button
@@ -811,14 +908,20 @@ const Portfolio = ({ onViewProject }) => {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section id="home">
         <div className="hero-background"></div>
         <div className="container">
           <div className="hero">
             <div className={`hero-content ${isVisible.home ? 'fade-in' : ''}`}>
               <div className="hero-photo-wrapper">
-                <img src="/assets/photo.jpg" alt={personalInfo.name} className="hero-photo" />
+                <img
+                  src="/assets/photo.jpg"
+                  alt={personalInfo.name}
+                  className="hero-photo"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                />
               </div>
               <h1 className="hero-title">
                 {personalInfo.name}
@@ -849,7 +952,6 @@ const Portfolio = ({ onViewProject }) => {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="section-alt">
         <div className="container">
           <div className={`about-content fade-in-section ${isVisible.about ? 'visible' : ''}`}>
@@ -881,12 +983,11 @@ const Portfolio = ({ onViewProject }) => {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section id="projects">
         <div className="container">
           <h2 className="section-title">Projects</h2>
           <div className={`projects-grid fade-in-section ${isVisible.projects ? 'visible' : ''}`}>
-            {projects.map((project, index) => (
+            {paginatedProjects.map((project, index) => (
               <div key={index} className="project-card">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
@@ -921,22 +1022,59 @@ const Portfolio = ({ onViewProject }) => {
                 </div>
 
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginTop: '0.75rem', flexWrap: 'wrap' }}>
-                  <button
-                    onClick={() => onViewProject(project)}
+                  <Link
+                    to={`/project/${project.id}`}
                     className="project-link"
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem', padding: 0 }}
+                    style={{ textDecoration: 'none' }}
                   >
                     <ExternalLink size={16} />
                     <span>View Details</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
+
+          {totalPages > 1 && (
+            <div className="pagination-container">
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="pagination-btn"
+              >
+                <ChevronLeft size={18} />
+                <span>Prev</span>
+              </button>
+
+              <div className="pagination-number-list" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                  <button
+                    key={pageNum}
+                    onClick={() => handlePageChange(pageNum)}
+                    className={`pagination-number ${currentPage === pageNum ? 'active' : ''}`}
+                  >
+                    {pageNum}
+                  </button>
+                ))}
+              </div>
+
+              <span className="pagination-mobile-info">
+                Page {currentPage} of {totalPages}
+              </span>
+
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="pagination-btn"
+              >
+                <span>Next</span>
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" className="section-alt">
         <div className="container">
           <h2 className="section-title">Skills & Expertise</h2>
@@ -961,7 +1099,6 @@ const Portfolio = ({ onViewProject }) => {
         </div>
       </section>
 
-      {/* Experience Section */}
       <section id="experience">
         <div className="container">
           <h2 className="section-title">Work Experience</h2>
@@ -975,13 +1112,19 @@ const Portfolio = ({ onViewProject }) => {
                 <p className="cert-detail" style={{ fontSize: '18px' }}><strong>{exp.institution}</strong></p>
                 <p className="cert-detail">{exp.date}</p>
                 <p className="cert-achievement">{exp.achievement}</p>
+                {exp.skills && exp.skills.length > 0 && (
+                  <div className="project-tech-list" style={{ marginTop: '1rem' }}>
+                    {exp.skills.map((skill, i) => (
+                      <span key={i} className="project-tech-tag">{skill}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="section-alt">
         <div className="container">
           <h2 className="section-title">Get In Touch</h2>
@@ -999,11 +1142,13 @@ const Portfolio = ({ onViewProject }) => {
                   <span>Email</span>
                 </a>
                 <a
-                  href={`tel:${personalInfo.phone}`}
+                  href={personalInfo.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="contact-link contact-phone"
                 >
-                  <Phone size={20} />
-                  <span>Phone</span>
+                  <MessageCircle size={20} />
+                  <span>WhatsApp</span>
                 </a>
                 <a
                   href={personalInfo.linkedin}
@@ -1020,7 +1165,6 @@ const Portfolio = ({ onViewProject }) => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer>
         <div className="container">
           <p>© 2026. {personalInfo.name}.</p>

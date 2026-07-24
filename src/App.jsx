@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Portfolio from './portfolio';
 import ProjectDetail from './ProjectDetail';
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState(null);
-
   useEffect(() => {
-    // Disable right-click
     const handleContextMenu = (e) => e.preventDefault();
 
-    // Block DevTools shortcuts
     const handleKeyDown = (e) => {
-      // F12
       if (e.key === 'F12') { e.preventDefault(); return; }
-      // Ctrl+Shift+I / Ctrl+Shift+C / Ctrl+Shift+J
       if (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase())) { e.preventDefault(); return; }
-      // Ctrl+U (view source)
       if (e.ctrlKey && e.key.toUpperCase() === 'U') { e.preventDefault(); return; }
-      // Ctrl+S (save page)
       if (e.ctrlKey && e.key.toUpperCase() === 'S') { e.preventDefault(); return; }
-      // Ctrl+P (print)
       if (e.ctrlKey && e.key.toUpperCase() === 'P') { e.preventDefault(); return; }
     };
 
@@ -33,12 +25,12 @@ function App() {
   }, []);
 
   return (
-    <>
+    <BrowserRouter>
       <style>{`
         @media print {
           body * { display: none !important; }
           body::after {
-            content: 'Printing is disabled on this website.';
+            content: 'Printing disabled.';
             display: block;
             text-align: center;
             font-size: 2rem;
@@ -47,15 +39,12 @@ function App() {
           }
         }
       `}</style>
-      {selectedProject ? (
-        <ProjectDetail
-          project={selectedProject}
-          onBack={() => setSelectedProject(null)}
-        />
-      ) : (
-        <Portfolio onViewProject={(project) => setSelectedProject(project)} />
-      )}
-    </>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,17 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowLeft, Calendar, Cpu, Sparkles, Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { personalInfo } from './data';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, Calendar, Cpu, Sparkles, Images, ChevronLeft, ChevronRight, X, AlertTriangle } from 'lucide-react';
+import { personalInfo, projects } from './data';
 
-const ProjectDetail = ({ project, onBack }) => {
+const ProjectDetail = ({ project: propProject, onBack: propOnBack }) => {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const project = id ? projects.find(p => p.id === id) : propProject;
+  const handleBack = propOnBack || (() => navigate('/'));
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    if (project) {
+      document.title = `${project.title} | ${personalInfo.name}`;
+    } else {
+      document.title = `Project Not Found | ${personalInfo.name}`;
+    }
+    return () => {
+      document.title = `${personalInfo.name} | ${personalInfo.title}`;
+    };
+  }, [project]);
 
-  if (!project) return null;
+  if (!project) {
+    return (
+      <div className="portfolio" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', padding: '2rem', backgroundColor: '#1a1a1a', color: '#ffffff', fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" }}>
+        <AlertTriangle size={64} style={{ color: '#f97316', marginBottom: '1.5rem' }} />
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#ffffff', fontWeight: 700 }}>Project Not Found</h1>
+        <p style={{ color: '#a0a0a0', marginBottom: '2rem', maxWidth: '480px', lineHeight: 1.6 }}>
+          The project route you are looking for does not exist or may have been removed.
+        </p>
+        <Link
+          to="/"
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', backgroundColor: '#f97316', color: '#ffffff', textDecoration: 'none', fontWeight: 600, fontSize: '1rem' }}
+        >
+          <ArrowLeft size={18} />
+          <span>Back to Portfolio</span>
+        </Link>
+      </div>
+    );
+  }
 
-  // Flatten images for the lightbox so we can navigate seamlessly
   const flatImages = project.imageCategories
     ? project.imageCategories.flatMap(category =>
       category.groups.flatMap(group => group.images)
@@ -462,20 +492,18 @@ const ProjectDetail = ({ project, onBack }) => {
         }
       `}</style>
 
-      {/* Navigation — matches main page */}
       <nav className="pd-nav">
         <div className="pd-nav-container">
-          <div className="pd-logo" onClick={onBack}>
+          <div className="pd-logo" onClick={handleBack} style={{ cursor: 'pointer' }}>
             {personalInfo.name}
           </div>
-          <button onClick={onBack} className="pd-back-btn">
+          <button onClick={handleBack} className="pd-back-btn">
             <ArrowLeft size={18} />
             <span>Back to Portfolio</span>
           </button>
         </div>
       </nav>
 
-      {/* Hero Section — matches main hero style */}
       <section className="pd-hero">
         <div className="pd-hero-bg"></div>
         <div className="pd-hero-content">
@@ -488,7 +516,6 @@ const ProjectDetail = ({ project, onBack }) => {
         </div>
       </section>
 
-      {/* Technologies & Highlights — uses same card style as Skills/About */}
       <section className="pd-section pd-section-alt">
         <div className="pd-container">
           <div className="pd-info-grid">
@@ -532,7 +559,6 @@ const ProjectDetail = ({ project, onBack }) => {
         </div>
       </section>
 
-      {/* Gallery Section */}
       {flatImages.length > 0 && (
         <section className="pd-section">
           <div className="pd-container">
@@ -542,7 +568,6 @@ const ProjectDetail = ({ project, onBack }) => {
             </h2>
 
             {project.imageCategories ? (
-              // Nested rendering for categorized images
               project.imageCategories.map((category, cIdx) => (
                 <div key={cIdx} className="pd-category-block">
                   {category.name && (
@@ -551,7 +576,7 @@ const ProjectDetail = ({ project, onBack }) => {
                   {category.groups.map((group, gIdx) => (
                     <div key={gIdx} className="pd-group-block">
                       <h4 className="pd-group-title">
-                        <span style={{ color: '#f97316' }}>→</span> {group.type}
+                        <ArrowRight size={14} style={{ color: '#f97316', display: 'inline', verticalAlign: 'middle', marginRight: '0.25rem' }} /> {group.type}
                       </h4>
                       <div className="pd-gallery-grid">
                         {group.images.map((imgSrc, i) => {
@@ -562,6 +587,9 @@ const ProjectDetail = ({ project, onBack }) => {
                                 src={imgSrc}
                                 alt={`${project.title} - ${group.type} ${i + 1}`}
                                 className="pd-gallery-img"
+                                draggable={false}
+                                onContextMenu={(e) => e.preventDefault()}
+                                onDragStart={(e) => e.preventDefault()}
                               />
                               <div className="pd-gallery-overlay">
                                 <span>Click to enlarge</span>
@@ -575,7 +603,6 @@ const ProjectDetail = ({ project, onBack }) => {
                 </div>
               ))
             ) : (
-              // Fallback for legacy flat array
               <div className="pd-gallery-grid">
                 {flatImages.map((imgSrc, i) => (
                   <div key={i} className="pd-gallery-item" onClick={() => openLightbox(i)}>
@@ -583,6 +610,9 @@ const ProjectDetail = ({ project, onBack }) => {
                       src={imgSrc}
                       alt={`${project.title} - Image ${i + 1}`}
                       className="pd-gallery-img"
+                      draggable={false}
+                      onContextMenu={(e) => e.preventDefault()}
+                      onDragStart={(e) => e.preventDefault()}
                     />
                     <div className="pd-gallery-overlay">
                       <span>Click to enlarge</span>
@@ -595,7 +625,6 @@ const ProjectDetail = ({ project, onBack }) => {
         </section>
       )}
 
-      {/* Lightbox */}
       {lightboxIndex !== null && flatImages.length > 0 && (
         <div className="pd-lightbox" onClick={closeLightbox}>
           <button className="pd-lightbox-btn pd-lightbox-close" onClick={closeLightbox}>
@@ -608,6 +637,9 @@ const ProjectDetail = ({ project, onBack }) => {
             src={flatImages[lightboxIndex]}
             alt={`${project.title} - Image ${lightboxIndex + 1}`}
             className="pd-lightbox-img"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
             onClick={(e) => e.stopPropagation()}
           />
           <div className="pd-lightbox-watermark" />
@@ -620,7 +652,6 @@ const ProjectDetail = ({ project, onBack }) => {
         </div>
       )}
 
-      {/* Footer — matches main page */}
       <footer className="pd-footer">
         <div className="pd-container">
           <p>© 2025 {personalInfo.name}. Built with React.</p>
