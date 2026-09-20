@@ -189,6 +189,13 @@ const Portfolio = () => {
           align-items: center;
         }
 
+        #home {
+          min-height: 100vh;
+          padding: 6rem 0 4rem;
+          position: relative;
+          display: block;
+        }
+
         .section-alt {
           background-color: #242424;
         }
@@ -204,7 +211,7 @@ const Portfolio = () => {
         .hero {
           text-align: center;
           position: relative;
-          overflow: hidden;
+          // overflow: hidden;
         }
 
         .hero-background {
@@ -831,7 +838,9 @@ const Portfolio = () => {
           }
 
           section {
-            padding: 4rem 0;
+            padding: 6rem 0;
+            min-height: auto;
+            display: block;
           }
 
           .projects-grid,
@@ -909,7 +918,7 @@ const Portfolio = () => {
       </nav>
 
       <section id="home">
-        <div className="hero-background"></div>
+        <div className="hero-background"></div> 
         <div className="container">
           <div className="hero">
             <div className={`hero-content ${isVisible.home ? 'fade-in' : ''}`}>

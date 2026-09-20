@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Muhammad Shobri",
   title: "Mechanical Engineer | Drafter Engineer (2D/3D)",
-  description: "Mechanical Engineering graduate from Sampoerna University (double degree with the University of Arizona) and recipient of the SPARKS 100% Scholarship. Currently a Mechanical & Technical Engineer at SU-SPRIC, working on plastic asphalt development, data analysis, and lab equipment improvement.",
+  description: "Manufacturing Lab Engineer at Sampoerna University with a double degree in Mechanical Engineering from Sampoerna University and the University of Arizona. Experienced in developing and improving engineering systems through manufacturing, mechanical design, process development, and technical analysis, including successful mechanical solutions at PT Astra Otoparts. Passionate about 3D engineering design, machine development, CAD, CAM, FEA, and automation, with a strong problem solving and engineering mindset.",
   linkedin: "https://www.linkedin.com/in/mshobri/",
   email: "m.shobri2002@gmail.com",
   phone: "+62-812-7540-1100",
@@ -9,35 +9,35 @@ export const personalInfo = {
 };
 
 export const aboutMe = {
-  intro: "Mechanical Engineering graduate from Sampoerna University (double degree with the University of Arizona) and recipient of the SPARKS 100% Scholarship. Currently a Mechanical & Technical Engineer at SU-SPRIC, focusing on plastic asphalt development, experimental data analysis, and laboratory equipment improvement.",
-  experience: "Previously gained hands-on experience at PT Astra Otoparts (Nusametal) in process development — leveraging AutoCAD and SolidWorks to redesign assembly tooling, jigs, and fixtures, developing automated conveyor mechanisms, and conducting leak testing analysis. Also served as a Manufacturing Laboratory Assistant, instructing students in conventional lathe, CNC milling, 3D printing, virtual welding, and resin casting.",
-  goals: "Aiming to build a career in advanced manufacturing, industrial design, and robotic automation where I can apply my expertise in mechanical design, FEA, CAD/CAM, and hardware engineering.",
+  intro: "Mechanical Engineering graduate from Sampoerna University and the University of Arizona with hands-on expertise across mechanical systems, engineering design, manufacturing, and automation. My background bridges design and shop-floor execution, encompassing conventional and CNC machining, sensor integration, mechanical fabrication, and engineering analysis. From machine modification to maintenance, troubleshooting, and performance testing, I specialize in developing practical mechanical solutions that are functional, safe, and built for real-world reliability.",
+  experience: "Grounded in continuous improvement, I approach technical challenges by balancing theoretical design with operational realities to optimize system efficiency. I thrive in collaborative, multidisciplinary environments and am committed to growing as a versatile mechanical engineer who contributes to complex engineering projects, robust technical operations, and dependable systems.",
+  goals: "",
   education: {
     institution: "Sampoerna University | University of Arizona",
     program: "Bachelor of Engineering | Bachelor of Science in Mechanical Engineering",
-    focus: "Mechanical Design, Manufacturing, and Automation"
+    focus: "Mechanical Systems, Manufacturing, Automation, and Engineering Design"
   },
   careerGoals: {
-    title: "Advanced Manufacturing Engineer",
-    certification: "Targeting further CAD/CAM professional certifications.",
-    vision: "To become a skilled engineer in manufacturing, specializing in drafting, while continuously learning and growing into higher-impact roles."
+    title: "Mechanical Engineer",
+    certification: "Mechanical systems, equipment testing, maintenance, troubleshooting, and engineering improvement.",
+    vision: "To continuously develop as a hands-on engineer, contributing to reliable, efficient, and practical engineering solutions across industrial and technical environments."
   }
 };
 
 export const skills = [
   {
     category: 'Engineering Design',
-    items: ['AutoCAD', 'SolidWorks', '3D Modeling', 'SketchUp', 'Finite Element Analysis (FEA)', 'Onshape'],
+    items: [ 'SolidWorks', 'Onshape', 'AutoCAD', 'SketchUp', 'Finite Element Analysis (FEA)', ],
     icon: 'Code'
   },
   {
     category: 'Manufacturing',
-    items: ['CNC Programming and Machining', 'Conventional Machining', 'Welding & Virtual Welding', '3D Printing', 'Resin Casting'],
+    items: ['CNC Programming and Machining', 'Conventional Machining', 'Welding', '3D Printing', 'Resin Casting'],
     icon: 'Shield'
   },
   {
     category: 'Electronics & Software',
-    items: ['Arduino Programming', 'CAM Software (G-code)', 'Data Analysis'],
+    items: ['Arduino Programming', 'CAM Software (G-code)', 'Data Analysis', "MatLab"],
     icon: 'Database'
   },
   {
@@ -49,17 +49,31 @@ export const skills = [
 
 export const experience = [
   {
+    title: '3D Design Freelancer',
+    institution: 'Freelance',
+    date: 'Aug 2023 - Present',
+    achievement: 'Create customised 3D designs using various software (Solidworks, Onshape, SketchUp, and AutoCAD), meeting client specifications and requirements. Develop intricate machine designs utilizing 3D modelling techniques, ensuring accuracy and functionality.',
+    skills: []
+  },
+  {
+    title: 'Manufacturing Laboratory Engineer',
+    institution: 'Sampoerna University',
+    date: 'Aug 2026 - Present',
+    achievement: 'Coordinate manufacturing laboratory operations and equipment maintenance, ensuring the functionality, safety, and readiness of conventional and CNC machinery, 3D printers, welding equipment, and other supporting systems. Support the design, development, modification, and improvement of machines and engineering systems through collaboration with faculty members on various manufacturing and technical projects. Train and assist 40+ undergraduate students in manufacturing activities, providing hands on guidance in machining software, machining processes, machine operation, and laboratory practices.',
+    skills: []
+  },
+  {
     title: 'Mechanical & Technical Engineer',
     institution: 'SU-SPRIC (Sampoerna University - Sustainable Pavement Research and Innovation Center)',
-    date: 'Nov 2025 - Present',
-    achievement: 'Developing and optimizing formulations for plastic asphalt mixtures, analyzing experimental test data of asphalt specimens, and performing maintenance and modification of laboratory machines and equipment.',
+    date: 'Nov 2025 - Aug 2026',
+    achievement: 'Formulate and optimise waste asphalt mixtures utilising various polymers, including PP, PET, LDPE, VMPET, LLDPE/Nylon, PE, and SBR (car tyres) to maximise structural stability and rutting resistance. Analyse experimental test data using Microsoft Excel to evaluate specimen fatigue behaviour, flow, and structural strength, delivering data-driven insights for sustainable pavement design. Modernise and maintain laboratory testing machinery, including sensor integration and mechanical drivetrain overhauls, reducing equipment downtime and accelerating sample production.',
     skills: ['Plastic Asphalt', 'Data Analysis', 'Lab Equipment Maintenance']
   },
   {
     title: 'Product Engineer Intern - Process Development',
     institution: 'PT Astra Otoparts Divisi Nusametal',
     date: 'May 2024 - Aug 2024',
-    achievement: 'Monitored workflows and orchestrated Root Cause Analysis (Fishbone & Why-Why) to resolve line bottlenecks, implement Kaizen (continuous improvement) initiatives, and execute PDCA cycles for maximum reliability. Conducted Six Sigma trial analysis using Excel and MATLAB (mean, standard deviation, Normal Distribution, LCL/UCL) to evaluate machine stability, protect OEE, and eliminate quality claims from clients like AHM. Leveraging AutoCAD and SolidWorks, redesigned assembly line tooling, jigs, and fixtures, engineering custom Pokayoke (sensor) repositioning, magnetic pressers, and access frames to minimise cycle times and improve REBA scores. Managed Cross-Functional Collaboration to execute Dandori (setup changeover) procedures, handle high-volume line updates, and perform precision CNC Milling setups and machine repairs.',
+    achievement: 'Monitored workflows and orchestrated Root Cause Analysis (Fishbone & Why-Why) to resolve line bottlenecks, implement Kaizen (continuous improvement) initiatives, and execute PDCA cycles for maximum reliability. Conducted Six Sigma trial analysis using Excel and MATLAB (mean, standard deviation, Normal Distribution, LCL/UCL) to evaluate machine stability, protect OEE, and eliminate quality claims from clients like AHM. Optimised assembly line ergonomics and throughput by engineering custom Pokayoke (sensor) mechanisms, magnetic pressers, and modified access frames, significantly lowering REBA risk scores and cycle times. Managed Cross-Functional Collaboration to execute Dandori (setup changeover) procedures, handle high-volume line updates, and perform precision CNC Milling setups and machine repairs.',
     skills: ['AutoCAD', 'SolidWorks', 'Root Cause Analysis', 'Kaizen / PDCA', 'Six Sigma', 'CNC Milling', 'Pokayoke', 'Tooling & Jigs']
   },
   {
@@ -402,27 +416,27 @@ export const projects = [
       }
     ]
   },
-  {
-    id: "otoparts_frame",
-    title: "Oil Separator Assembly Machine's Frame",
-    year: "June 2024",
-    description: "A redesigned structural frame for the Oil Separator Assembly Machine created during the internship at PT Astra Otoparts. The new configuration introduces a dedicated under-machine passageway to allow maintenance personel easier and safer access, improving serviceability without compromising structural integrity or machine performance.",
-    technologies: ["Structural Design", "Ergonomics", "SolidWorks"],
-    highlights: ["Improved maintenance access", "Maintained structural integrity", "Ergonomic redesign"],
-    imageCategories: [
-      {
-        groups: [
-          {
-            type: "Gallery",
-            images: [
-              "/assets/otoparts/Oil separator Assembly machine frame/WhatsApp Image 2025-12-06 at 16.32.49_cc5f2e26.jpg",
-              "/assets/otoparts/Oil separator Assembly machine frame/WhatsApp Image 2025-12-06 at 16.33.11_016353fe.jpg"
-            ]
-          }
-        ]
-      }
-    ]
-  },
+  // {
+  //   id: "otoparts_frame",
+  //   title: "Oil Separator Assembly Machine's Frame",
+  //   year: "June 2024",
+  //   description: "A redesigned structural frame for the Oil Separator Assembly Machine created during the internship at PT Astra Otoparts. The new configuration introduces a dedicated under-machine passageway to allow maintenance personel easier and safer access, improving serviceability without compromising structural integrity or machine performance.",
+  //   technologies: ["Structural Design", "Ergonomics", "SolidWorks"],
+  //   highlights: ["Improved maintenance access", "Maintained structural integrity", "Ergonomic redesign"],
+  //   imageCategories: [
+  //     {
+  //       groups: [
+  //         {
+  //           type: "Gallery",
+  //           images: [
+  //             "/assets/otoparts/Oil separator Assembly machine frame/WhatsApp Image 2025-12-06 at 16.32.49_cc5f2e26.jpg",
+  //             "/assets/otoparts/Oil separator Assembly machine frame/WhatsApp Image 2025-12-06 at 16.33.11_016353fe.jpg"
+  //           ]
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
   {
     id: "thermometer",
     title: "2-in-1 Portable Thermometer Case",
@@ -450,75 +464,75 @@ export const projects = [
       }
     ]
   },
-  {
-    id: "plat_gear_driven",
-    title: "Project Plat Gear Driven",
-    year: "May - August 2024",
-    description: "Engineering design and fixture optimization for small metal plates used in the Gear Oil Driven assembly process at PT Astra Otoparts Divisi Nusametal. The project focused on custom presser plates, precision positioning pins, and magazine feeder components to streamline component orientation and eliminate assembly line bottlenecks.",
-    technologies: ["SolidWorks", "Tooling & Jig Design", "Precision Mechanics", "Process Optimization"],
-    highlights: ["Custom Plate Fixture Design", "Enhanced Component Alignment", "Assembly Bottleneck Elimination"],
-    imageCategories: [
-      {
-        groups: [
-          {
-            type: "Assembly",
-            images: [
-              "/assets/plat_gear_driven/Assembly/Picture35.png",
-              "/assets/plat_gear_driven/Assembly/Picture36.png",
-              "/assets/plat_gear_driven/Assembly/Picture37.png",
-              "/assets/plat_gear_driven/Assembly/Picture38.png",
-              "/assets/plat_gear_driven/Assembly/Picture40.png",
-              "/assets/plat_gear_driven/Assembly/Picture45.jpg"
-            ]
-          },
-          {
-            type: "Parts",
-            images: [
-              "/assets/plat_gear_driven/Parts/Picture41.png",
-              "/assets/plat_gear_driven/Parts/Picture46.png",
-              "/assets/plat_gear_driven/Parts/Picture47.png"
-            ]
-          },
-          {
-            type: "Data",
-            images: [
-              "/assets/plat_gear_driven/Data/Picture42.jpg",
-              "/assets/plat_gear_driven/Data/Picture43.jpg",
-              "/assets/plat_gear_driven/Data/Picture44.jpg"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "leak_test_stability",
-    title: "Leak Test Stability Analysis (Cover Motor K3NA)",
-    year: "May - August 2024",
-    description: "Statistical quality control and process stability analysis conducted on the Cover Motor K3NA leak test line at PT Astra Otoparts Divisi Nusametal. Implemented Six Sigma statistical tools using Excel and MATLAB (evaluating mean, standard deviation, Normal Distribution, LCL/UCL control limits) to identify pressure variation root causes, protect OEE, and prevent quality claims from client AHM.",
-    technologies: ["Six Sigma", "MATLAB", "Excel Statistical Analysis", "Quality Control", "Leak Testing"],
-    highlights: ["Statistical Process Control (SPC)", "Normal Distribution & Control Limits", "AHM Client Quality Protection"],
-    imageCategories: [
-      {
-        groups: [
-          {
-            type: "Assembly",
-            images: [
-              "/assets/leak_test_stability/Assembly/Picture33.jpg"
-            ]
-          },
-          {
-            type: "Data",
-            images: [
-              "/assets/leak_test_stability/Data/Picture31.png",
-              "/assets/leak_test_stability/Data/Picture32.png",
-              "/assets/leak_test_stability/Data/Picture34.jpg"
-            ]
-          }
-        ]
-      }
-    ]
-  },
+  // {
+  //   id: "plat_gear_driven",
+  //   title: "Project Plat Gear Driven",
+  //   year: "May - August 2024",
+  //   description: "Engineering design and fixture optimization for small metal plates used in the Gear Oil Driven assembly process at PT Astra Otoparts Divisi Nusametal. The project focused on custom presser plates, precision positioning pins, and magazine feeder components to streamline component orientation and eliminate assembly line bottlenecks.",
+  //   technologies: ["SolidWorks", "Tooling & Jig Design", "Precision Mechanics", "Process Optimization"],
+  //   highlights: ["Custom Plate Fixture Design", "Enhanced Component Alignment", "Assembly Bottleneck Elimination"],
+  //   imageCategories: [
+  //     {
+  //       groups: [
+  //         {
+  //           type: "Assembly",
+  //           images: [
+  //             "/assets/plat_gear_driven/Assembly/Picture35.png",
+  //             "/assets/plat_gear_driven/Assembly/Picture36.png",
+  //             "/assets/plat_gear_driven/Assembly/Picture37.png",
+  //             "/assets/plat_gear_driven/Assembly/Picture38.png",
+  //             "/assets/plat_gear_driven/Assembly/Picture40.png",
+  //             "/assets/plat_gear_driven/Assembly/Picture45.jpg"
+  //           ]
+  //         },
+  //         {
+  //           type: "Parts",
+  //           images: [
+  //             "/assets/plat_gear_driven/Parts/Picture41.png",
+  //             "/assets/plat_gear_driven/Parts/Picture46.png",
+  //             "/assets/plat_gear_driven/Parts/Picture47.png"
+  //           ]
+  //         },
+  //         {
+  //           type: "Data",
+  //           images: [
+  //             "/assets/plat_gear_driven/Data/Picture42.jpg",
+  //             "/assets/plat_gear_driven/Data/Picture43.jpg",
+  //             "/assets/plat_gear_driven/Data/Picture44.jpg"
+  //           ]
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
+  // {
+  //   id: "leak_test_stability",
+  //   title: "Leak Test Stability Analysis (Cover Motor K3NA)",
+  //   year: "May - August 2024",
+  //   description: "Statistical quality control and process stability analysis conducted on the Cover Motor K3NA leak test line at PT Astra Otoparts Divisi Nusametal. Implemented Six Sigma statistical tools using Excel and MATLAB (evaluating mean, standard deviation, Normal Distribution, LCL/UCL control limits) to identify pressure variation root causes, protect OEE, and prevent quality claims from client AHM.",
+  //   technologies: ["Six Sigma", "MATLAB", "Excel Statistical Analysis", "Quality Control", "Leak Testing"],
+  //   highlights: ["Statistical Process Control (SPC)", "Normal Distribution & Control Limits", "AHM Client Quality Protection"],
+  //   imageCategories: [
+  //     {
+  //       groups: [
+  //         {
+  //           type: "Assembly",
+  //           images: [
+  //             "/assets/leak_test_stability/Assembly/Picture33.jpg"
+  //           ]
+  //         },
+  //         {
+  //           type: "Data",
+  //           images: [
+  //             "/assets/leak_test_stability/Data/Picture31.png",
+  //             "/assets/leak_test_stability/Data/Picture32.png",
+  //             "/assets/leak_test_stability/Data/Picture34.jpg"
+  //           ]
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
   {
     id: "marker_face",
     title: "Marker Face for Movable Drive",
@@ -530,12 +544,12 @@ export const projects = [
       {
         groups: [
           {
-            type: "Assembly",
+            type: "Gallery",
             images: [
               "/assets/marker_face/Assembly/Picture26.jpg",
               "/assets/marker_face/Assembly/Picture27.jpg",
               "/assets/marker_face/Assembly/Picture28.jpg",
-              "/assets/marker_face/Assembly/Picture29.png"
+              // "/assets/marker_face/Assembly/Picture29.png"
             ]
           },
           {
@@ -559,7 +573,7 @@ export const projects = [
       {
         groups: [
           {
-            type: "Assembly",
+            type: "Gallery",
             images: [
               "/assets/ng_chuter/Assembly/Picture22.jpg",
               "/assets/ng_chuter/Assembly/Picture23.jpg"
@@ -569,7 +583,7 @@ export const projects = [
             type: "Parts",
             images: [
               "/assets/ng_chuter/Parts/Picture23.png",
-              "/assets/ng_chuter/Parts/Picture24.png"
+              // "/assets/ng_chuter/Parts/Picture24.png"
             ]
           }
         ]
@@ -589,9 +603,9 @@ export const projects = [
           {
             type: "Gallery",
             images: [
-              "/assets/pokayoke_sensor/Picture17.png",
-              "/assets/pokayoke_sensor/Picture18.png",
-              "/assets/pokayoke_sensor/Picture19.png",
+              // "/assets/pokayoke_sensor/Picture17.png",
+              // "/assets/pokayoke_sensor/Picture18.png",
+              // "/assets/pokayoke_sensor/Picture19.png",
               "/assets/pokayoke_sensor/Picture20.jpg",
               "/assets/pokayoke_sensor/Picture21.jpg"
             ]
@@ -620,70 +634,70 @@ export const projects = [
       }
     ]
   },
-  {
-    id: "assy_gear_oil_improvements",
-    title: "Assy Gear Oil Driven Improvements",
-    year: "May - August 2024",
-    description: "Comprehensive process improvement and line balancing for the Gear Oil Driven assembly station at PT Astra Otoparts Divisi Nusametal. Engineered magnetic pressers, pin positioning fixtures, and setup changeover (Dandori) procedures that reduced assembly cycle times and safeguarded machine OEE.",
-    technologies: ["Kaizen & PDCA", "Dandori Setup Changeover", "Magnetic Presser Design", "Line Balancing"],
-    highlights: ["Reduced Assembly Cycle Time", "Magnetic Presser Innovation", "Dandori Setup Standardization"],
-    imageCategories: [
-      {
-        groups: [
-          {
-            type: "Assembly",
-            images: [
-              "/assets/assy_gear_oil_improvements/Assembly/Picture2.jpg",
-              "/assets/assy_gear_oil_improvements/Assembly/Picture5.jpg",
-              "/assets/assy_gear_oil_improvements/Assembly/Picture6.png",
-              "/assets/assy_gear_oil_improvements/Assembly/Picture8.jpg",
-              "/assets/assy_gear_oil_improvements/Assembly/Picture9.jpg",
-              "/assets/assy_gear_oil_improvements/Assembly/Picture10.jpg",
-              "/assets/assy_gear_oil_improvements/Assembly/Picture13.jpg",
-              "/assets/assy_gear_oil_improvements/Assembly/Picture14.jpg",
-              "/assets/assy_gear_oil_improvements/Assembly/Picture15.jpg"
-            ]
-          },
-          {
-            type: "Parts",
-            images: [
-              "/assets/assy_gear_oil_improvements/Parts/Picture1.png",
-              "/assets/assy_gear_oil_improvements/Parts/Picture3.png",
-              "/assets/assy_gear_oil_improvements/Parts/Picture4.png",
-              "/assets/assy_gear_oil_improvements/Parts/Picture7.png",
-              "/assets/assy_gear_oil_improvements/Parts/Picture11.png",
-              "/assets/assy_gear_oil_improvements/Parts/Picture12.png"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "concept_assy_oil_separator",
-    title: "Concept Assy Oil Separator Mechanism",
-    year: "June - August 2024",
-    description: "Conceptual design and mechanical modeling of an automated assembly mechanism for oil separator units at PT Astra Otoparts Divisi Nusametal. Developed multi-component CAD models featuring pneumatic clamp actuation and modular sub-assemblies for automated part insertion.",
-    technologies: ["Conceptual Mechanical Design", "Pneumatic Actuation", "SolidWorks 3D Modeling", "Automated Sub-assemblies"],
-    highlights: ["Modular Pneumatic Clamping", "Automated Insertion Kinematics", "3D Assembly CAD Modeling"],
-    imageCategories: [
-      {
-        groups: [
-          {
-            type: "Assembly",
-            images: [
-              "/assets/concept_assy_oil_separator/Assembly/Picture1.png"
-            ]
-          },
-          {
-            type: "Parts",
-            images: [
-              "/assets/concept_assy_oil_separator/Parts/Picture2.png",
-              "/assets/concept_assy_oil_separator/Parts/Picture3.png"
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  // {
+  //   id: "assy_gear_oil_improvements",
+  //   title: "Assy Gear Oil Driven Improvements",
+  //   year: "May - August 2024",
+  //   description: "Comprehensive process improvement and line balancing for the Gear Oil Driven assembly station at PT Astra Otoparts Divisi Nusametal. Engineered magnetic pressers, pin positioning fixtures, and setup changeover (Dandori) procedures that reduced assembly cycle times and safeguarded machine OEE.",
+  //   technologies: ["Kaizen & PDCA", "Dandori Setup Changeover", "Magnetic Presser Design", "Line Balancing"],
+  //   highlights: ["Reduced Assembly Cycle Time", "Magnetic Presser Innovation", "Dandori Setup Standardization"],
+  //   imageCategories: [
+  //     {
+  //       groups: [
+  //         {
+  //           type: "Assembly",
+  //           images: [
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture2.jpg",
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture5.jpg",
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture6.png",
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture8.jpg",
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture9.jpg",
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture10.jpg",
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture13.jpg",
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture14.jpg",
+  //             "/assets/assy_gear_oil_improvements/Assembly/Picture15.jpg"
+  //           ]
+  //         },
+  //         {
+  //           type: "Parts",
+  //           images: [
+  //             "/assets/assy_gear_oil_improvements/Parts/Picture1.png",
+  //             "/assets/assy_gear_oil_improvements/Parts/Picture3.png",
+  //             "/assets/assy_gear_oil_improvements/Parts/Picture4.png",
+  //             "/assets/assy_gear_oil_improvements/Parts/Picture7.png",
+  //             "/assets/assy_gear_oil_improvements/Parts/Picture11.png",
+  //             "/assets/assy_gear_oil_improvements/Parts/Picture12.png"
+  //           ]
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
+  // {
+  //   id: "concept_assy_oil_separator",
+  //   title: "Concept Assy Oil Separator Mechanism",
+  //   year: "June - August 2024",
+  //   description: "Conceptual design and mechanical modeling of an automated assembly mechanism for oil separator units at PT Astra Otoparts Divisi Nusametal. Developed multi-component CAD models featuring pneumatic clamp actuation and modular sub-assemblies for automated part insertion.",
+  //   technologies: ["Conceptual Mechanical Design", "Pneumatic Actuation", "SolidWorks 3D Modeling", "Automated Sub-assemblies"],
+  //   highlights: ["Modular Pneumatic Clamping", "Automated Insertion Kinematics", "3D Assembly CAD Modeling"],
+  //   imageCategories: [
+  //     {
+  //       groups: [
+  //         {
+  //           type: "Assembly",
+  //           images: [
+  //             "/assets/concept_assy_oil_separator/Assembly/Picture1.png"
+  //           ]
+  //         },
+  //         {
+  //           type: "Parts",
+  //           images: [
+  //             "/assets/concept_assy_oil_separator/Parts/Picture2.png",
+  //             "/assets/concept_assy_oil_separator/Parts/Picture3.png"
+  //           ]
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // }
 ];
