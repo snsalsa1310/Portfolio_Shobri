@@ -654,7 +654,7 @@ const ProjectDetail = ({ project: propProject, onBack: propOnBack }) => {
 
       <footer className="pd-footer">
         <div className="pd-container">
-          <p>© 2025 {personalInfo.name}. Built with React.</p>
+          <p>© 2026 {personalInfo.name}.</p>
         </div>
       </footer>
     </div>
