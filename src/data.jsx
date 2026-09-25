@@ -49,18 +49,18 @@ export const skills = [
 
 export const experience = [
   {
-    title: '3D Design Freelancer',
-    institution: 'Freelance',
-    date: 'Aug 2023 - Present',
-    achievement: 'Create customised 3D designs using various software (Solidworks, Onshape, SketchUp, and AutoCAD), meeting client specifications and requirements. Develop intricate machine designs utilizing 3D modelling techniques, ensuring accuracy and functionality.',
-    skills: []
-  },
-  {
     title: 'Manufacturing Laboratory Engineer',
     institution: 'Sampoerna University',
     date: 'Aug 2026 - Present',
     achievement: 'Coordinate manufacturing laboratory operations and equipment maintenance, ensuring the functionality, safety, and readiness of conventional and CNC machinery, 3D printers, welding equipment, and other supporting systems. Support the design, development, modification, and improvement of machines and engineering systems through collaboration with faculty members on various manufacturing and technical projects. Train and assist 40+ undergraduate students in manufacturing activities, providing hands on guidance in machining software, machining processes, machine operation, and laboratory practices.',
-    skills: []
+    skills: ["Manufacturing", "Project Engineering", "Traning", "Troubleshooting", "Root Cause Analysis"]
+  },
+  {
+    title: '3D Design Freelancer',
+    institution: 'Freelance',
+    date: 'Aug 2023 - Present',
+    achievement: 'Create customised 3D designs using various software (Solidworks, Onshape, SketchUp, and AutoCAD), meeting client specifications and requirements. Develop intricate machine designs utilizing 3D modelling techniques, ensuring accuracy and functionality.',
+    skills: ["Engineering Design", "3D Software"]
   },
   {
     title: 'Mechanical & Technical Engineer',
